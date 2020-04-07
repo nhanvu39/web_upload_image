@@ -1,0 +1,141 @@
+<!-- <html>
+<header>
+    <h2>ARI Face Detection</h2>
+</header>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<div width = "50%">
+<form action="upload-file" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+    <tr><th><label for="id_title">Name:</label></th><td><input type="text" name="Name" value="sdc" maxlength="50" required id="id_title"></td></tr>
+    </div>
+<tr><th><label for="id_file">File:</label></th><td><input type="file" name="file" required id="id_file"></td></tr>
+    <input type="submit" value="Detect">
+</form>
+</div>
+</html> -->
+
+
+<html>
+<header>
+    <style>
+        * {
+            font-size: 20px;
+        }
+
+        .contain {
+            background-color: #05e2ff;
+            background-image: linear-gradient(to right, tomato, orange);
+            width: 400px;
+            height: 250px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -70%);
+            border-radius: 5px;
+            box-shadow: 1px 1px 10px;
+        }
+
+        .title {
+            width: 100%;
+            text-align: center;
+            color: white
+        }
+
+        .title h1 {
+            font-size: 30px;
+        }
+
+        .form {
+            display: flex;
+        }
+
+        .name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            padding-left: 5px;
+        }
+
+        .name label {
+            color: white;
+        }
+
+        .name input {
+            /* border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; */
+            border: none;
+            padding-left: 10px;
+            box-shadow: 0.5px 0.5px 5px gray;
+        }
+
+        .file {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        input[type=file] {
+            margin-bottom: 40px;
+            cursor: pointer;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0.5px 0.5px 5px gray;
+            color: white;
+        }
+    </style>
+</header>
+
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    {% endif %}
+    <div class="contain">
+        <div class="title">
+            <h1>BKU ReID</h1>
+        </div>
+        <div class="form">
+            <form action="upload" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- <div class="name">
+                    <label for="id_title">Name:</label>
+                    <input type="text" name="Name" value="" maxlength="50" required id="id_title">
+                </div> -->
+                <div class="file">
+                    <!-- <label for="id_file">File:</label> -->
+                    <input type="file" name="file" required id="id_file">
+                </div>
+                <input type="submit" value="Train">
+            </form>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</body>
+​
+
+</html>
+<script>
+
+</script>

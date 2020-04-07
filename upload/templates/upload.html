@@ -1,0 +1,24 @@
+<html>
+
+<body style="text-align: center">
+    <div>
+        <img src={{ dt }} alt="Red dot" ,with="100%">
+
+    </div>
+    <div>
+        <!-- <h3>Find {{ num }} face</h3> -->
+    </div>
+    <div>
+        <button style="width: 100px" onclick="call_counter('/upload')">Back</button>
+    </div>
+</body>
+
+</html>
+<script>
+    function call_counter(url, pk) {
+        location.replace(url);
+        $.get('YOUR_VIEW_HERE/' + pk + '/', function (data) {
+            alert("counter updated!");
+        });
+    }
+</script>
