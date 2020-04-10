@@ -3,6 +3,7 @@ from django import forms
 class UploadFileForm(forms.Form):
     # Name = forms.CharField(max_length=50)
     file = forms.FileField()
+    file1 = forms.FileField()
 
 class NameForm(forms.Form):
     your_name = forms.CharField(label='Your name', max_length=100)
